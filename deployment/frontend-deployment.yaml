@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reverseproxy
+  name: frontend-api
   labels:
-    app: reverseproxy
+    app: frontend-api
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: reverseproxy
+      app: frontend-api
   template:
     metadata:
       labels:
-        app: reverseproxy
+        app: frontend-api
     spec:
       containers:
-      - name: udagram-reverseproxy
-        image: unihornkccrlq/reverseproxy:v0
+      - name: udagram-frontend
+        image: unihornkccrlq/udagram-frontend:v0
         imagePullPolicy: Always
         envFrom:
           - configMapRef:
@@ -27,4 +27,3 @@ spec:
               name: aws-secret
         ports:
         - containerPort: 80
-      restartPolicy: Always

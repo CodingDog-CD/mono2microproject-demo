@@ -4,16 +4,10 @@ metadata:
   labels:
     app: reverseproxy
   name: reverseproxy
-  namespace: default
-  selfLink: /api/v1/namespaces/default/services/reverseproxy
 spec:
   ports:
-  - port: 8080
+  - port: 80
     protocol: TCP
     targetPort: 8080
   selector:
     app: reverseproxy
-  sessionAffinity: None
-  type: ClusterIP
-status:
-  loadBalancer: {}
