@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-api-feed
+  labels:
+    app: backend-api-feed
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-api-feed
+  template:
+    metadata:
+      labels:
+        app: backend-api-feed
+    spec:
+      containers:
+      - name: udagram-api-feed
+        image: unihornkccrlq/udagram-api-feed:v0
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: udagram-configmap
+          - secretRef:
+              name: env-secret
+          - secretRef:
+              name: aws-secret
+        ports:
+        - containerPort: 80
+      restartPolicy: Always
