@@ -4,9 +4,9 @@ metadata:
   name: udagram-configmap
 data:
   # property-like keys; each key maps to a simple value
-  POSTGRES_HOST: "my-udagram-database-094340009782.ck7nkfxyiwyq.eu-central-1.rds.amazonaws.com"
+  POSTGRES_HOST: "my-database-rlq-094340009782.ck7nkfxyiwyq.eu-central-1.rds.amazonaws.com"
   POSTGRES_DB: "postgres"
-  AWS_BUCKET: "My-udagram-bucket-094340009782"
+  AWS_BUCKET: "My-bucket-rlq-094340009782"
   AWS_REGION: "eu-central-1"
   AWS_PROFILE: "default"
   JWT_SECRET: "hello"
