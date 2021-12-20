@@ -18,6 +18,13 @@ spec:
       - name: udagram-api-user
         image: unihornkccrlq/udagram-api-user:v0
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "200m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"
         envFrom:
           - configMapRef:
               name: udagram-configmap
